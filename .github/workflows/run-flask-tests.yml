@@ -7,9 +7,10 @@ name: Run tests against Flask application
 on:
   push:
     branches:
-      - main
-    paths:
-      - '/'
+      - master
+  pull_request:
+    branches:
+      - master
 
 permissions:
   contents: read
