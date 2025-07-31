@@ -25,7 +25,7 @@ variable "environment" {
 variable "AWS_REGION" {
   type        = string
   description = "Region"
-  default     = "eu-west-1"
+  default     = "eu-west-2"
 }
 
 variable "repository_name" {

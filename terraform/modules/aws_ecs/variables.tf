@@ -41,7 +41,7 @@ variable "private_subnet_ids" {
 variable "aws_region" {
   type        = string
   description = "Region"
-  default     = "eu-west-1"
+  default     = "eu-west-2"
 }
 
 variable "ecr_image_url" {

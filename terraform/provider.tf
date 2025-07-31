@@ -11,7 +11,7 @@ terraform {
 
 provider "aws" {
   region  = var.AWS_REGION
-  profile = "tf-user-for-test"
+  profile = "walking-skeleton-ci"
   default_tags {
     tags = {
       Environment = var.environment
