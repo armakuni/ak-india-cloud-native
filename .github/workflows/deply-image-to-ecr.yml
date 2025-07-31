@@ -1,7 +1,6 @@
 name: Deploy Docker Image To AWS ECR
 
 on:
-  workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
