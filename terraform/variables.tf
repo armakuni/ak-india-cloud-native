@@ -7,7 +7,7 @@ variable "managed_by" {
 variable "project" {
   type        = string
   description = "Project name"
-  default     = "Kubernetes deployment"
+  default     = "cloud-native"
 }
 
 variable "owner" {
@@ -25,25 +25,25 @@ variable "environment" {
 variable "AWS_REGION" {
   type        = string
   description = "Region"
-  default     = "us-east-1"
+  default     = "eu-west-1"
 }
 
-variable "flask_api_repository_name" {
+variable "repository_name" {
   type        = string
   description = "Flask API repo name deployed from GitHub"
-  default     = "kubernetes-flask-api-images"
+  default     = "flask-api"
 }
 
 variable "django_api_repository_name" {
   type        = string
   description = "Django API repo name deployed from GitHub"
-  default     = "kubernetes-django-api-images"
+  default     = "cloud-native-django-api-images"
 }
 
 variable "ecs_application_port" {
   type        = string
   description = "Port the Flask APP runs on docker"
-  default     = "5000"
+  default     = "8000"
 }
 
 variable "docker_app_name" {
@@ -51,24 +51,7 @@ variable "docker_app_name" {
   description = "Name of Docker App"
   default     = "flask-api"
 }
-#
-# variable "eks_cluster_role_name" {
-#   type        = string
-#   description = "Role name for EKS"
-#   default     = "eks-cluster-role"
-# }
-#
-# variable "eks_cluster_name" {
-#   type        = string
-#   description = "Cluster name"
-#   default     = "flask-api-cluster"
-# }
-#
-# variable "subnet_ids" {
-#   type        = list(string)
-#   description = "Public subnet IDs of cluster"
-#   default     = ["ChangeMe", "ChangeMe"]
-# }
+
 ######################################################################
 ############################## DATABASE  #############################
 ######################################################################
@@ -146,35 +129,19 @@ variable "engine_family" {
   default     = "postgres16"
 }
 
-# variable "private_subnet_ids" {
-#   description = "Private subnet ids to launch RDS in"
-#   default     = []
-# }
-
-variable "parameters" {
-  description = "rds parameters to set"
-  type = list(object({
-    name  = string
-    value = string
-  }))
-  default = [{
-    name  = "log_connections"
-    value = 1
-    }, {
-    name  = "character_set_server"
-    value = "utf8"
-    }, {
-    name  = "character_set_client"
-    value = "utf8"
-  }]
-}
 variable "ingress_security_groups" {
   description = "Security groups to allow"
   default     = []
 }
+
 variable "allow_self" {
   description = "if true, allows traffic from self"
   default     = false
 }
 
+variable "load_balancer_type" {
+  type        = string
+  description = "Load Balancer type, one of  application, gateway, or network"
+  default     = "application"
+}
 
