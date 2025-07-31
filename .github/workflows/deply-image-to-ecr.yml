@@ -12,6 +12,8 @@ jobs:
   SpinupInfra:
     name: Terraform plan validate and apply
     runs-on: ubuntu-latest
+    env:
+      AWS_PROFILE: cloud-native-ci
     # environment: production
     # env:
     #   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
