@@ -11,7 +11,7 @@ terraform {
 
 provider "aws" {
   region  = var.AWS_REGION
-  profile = "walking-skeleton-ci"
+  profile = "cloud-native-ci"
   default_tags {
     tags = {
       Environment = var.environment
