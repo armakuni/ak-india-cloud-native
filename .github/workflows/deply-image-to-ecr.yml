@@ -25,11 +25,11 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
-      - name: Add profile credentials to ~/.aws/credentials
-        run: |
-          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile cloud-native-ci
-          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile cloud-native-ci
-          aws configure set aws_region ${{ secrets.AWS_DEFAULT_REGION }} --profile cloud-native-ci
+#      - name: Add profile credentials to ~/.aws/credentials
+#        run: |
+#          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile cloud-native-ci
+#          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile cloud-native-ci
+#          aws configure set aws_region ${{ secrets.AWS_DEFAULT_REGION }} --profile cloud-native-ci
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
