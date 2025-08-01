@@ -46,7 +46,7 @@ jobs:
 
       - name: Terraform Apply
         id: terraform_apply
-        If: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
         env:
           ECR_REGISTRY: ${{ steps.terraform_apply.outputs.ecr_repo_url }}
           ECR_REPOSITORY: ${{ steps.terraform_apply.outputs.ecr_repo_name }}
